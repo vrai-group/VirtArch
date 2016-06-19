@@ -1,0 +1,501 @@
+/* font */
+
+@font-face
+{
+	font-family: 'Droid Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Droid Sans'), local('DroidSans'), url(DroidSans.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+body
+{
+	background-color: #fff;
+	color: #111;
+	overflow: hidden;
+	font-family: Droid Sans;
+	font-size: 13px;
+	margin: 0;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+canvas.fatto
+{
+	transition: all 1s ease-in-out;
+	-webkit-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+}
+
+canvas.caricamento
+{
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+	filter: blur(5px);
+}
+/* CERCHIO CARICAMENTO */
+
+.cerchio .bar,
+.maggioreCinquanta
+{
+	position: absolute;
+	border: 0.08em solid #307bbb;
+	width: 0.84em;
+	height: 0.84em;
+	clip: rect(0em, 0.5em, 1em, 0em);
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+}
+
+.cerchio
+{
+	position: absolute;
+	font-size: 120px;
+	width: 1em;
+	height: 1em;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+	float: left;
+	background: rgba(0, 0, 0, 0);
+    /* 0% opaco (completamente trasparente) */
+	font-size: 240px;
+	float: none;
+    /* lo metto al centro della pagina! */
+	left: 0;
+	right: 0;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	-moz-box-shadow: 5px 5px 5px #000;
+	-webkit-box-shadow: 5px 5px 5px #000;
+	box-shadow: 5px 5px 5px #000;
+}
+
+.cerchio > span
+{
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	position: absolute;
+	width: 100%;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 5em;
+	line-height: 5em;
+	font-size: 0.2em;
+	color: #307bbb;
+	display: block;
+	text-align: center;
+	white-space: nowrap;
+	text-shadow: #000 1px 1px 1px;
+}
+
+.cerchio .settoreCircolare
+{
+	position: absolute;
+	width: 1em;
+	height: 1em;
+	clip: rect(0em, 1em, 1em, 0.5em);
+}
+/***********************/
+/* PULSANTI!*/
+
+[class*="pulsante-"]
+{
+	font-size: 3em;
+	position: absolute;
+	font-family: simboli;
+}
+
+@font-face
+{
+	font-family: simboli;
+    src: url(NotoEmoji-Regular.ttf);
+}
+
+.pulsante-indietro:after
+{
+	content: "\21B6";
+}
+
+.pulsante-indietro
+{
+	top: 50px;
+	left: 25px;
+}
+
+.pulsante-fullscreen:after
+{
+	content: "\2629";
+}
+
+.pulsante-fullscreen
+{
+	top: 50px;
+	right: 25px;
+}
+
+#left
+{
+	float: left;
+	width: 100px;
+	height: 20px;
+}
+
+#center
+{
+	margin: 0 auto;
+	width: 100px;
+	height: 20px;
+}
+
+#right
+{
+	float: right;
+	width: 100px;
+	height: 20px;
+}
+
+.pulsante-camera:after
+{
+	content: "\1F3A5";
+}
+
+.pulsante-camera
+{
+	top: 50px;
+	left: 25px;
+}
+
+.pulsanti a
+{
+	cursor: pointer;
+	border: none;
+	text-decoration: none;
+	display: block;
+	background-color: #080808;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#080808), to(#181818));
+	background-image: -webkit-linear-gradient(top, #080808, #181818);
+	background-image: -moz-linear-gradient(top, #080808, #181818);
+	background-image: -ms-linear-gradient(top, #080808, #181818);
+	background-image: -o-linear-gradient(top, #080808, #181818);
+	color: #aaa;
+	width: 88px;
+	line-height: 88px;
+	text-align: center;
+	border-radius: 50%;
+	box-shadow: 0px 3px 8px #555, inset 0px 2px 3px #000;
+    /* alpha al 30% */
+	background: rgba(0, 0, 0, 0.7);
+}
+/* DA MOSTRARE SOPRA GLI OGGETTI!!! */
+
+.pulsanti a:before
+{
+	content: "";
+	display: block;
+	background: #000;
+    /* alpha al 30% */
+	background: rgba(0, 0, 0, 0.3);
+	border-top: 2px solid #222;
+	position: absolute;
+    /*grandezza bordo pulsante*/
+	top: -8px;
+	left: -8px;
+	bottom: -8px;
+	right: -8px;
+    /*importante*/
+	z-index: 1;
+	border-radius: 50%;
+	box-shadow: inset 0px 8px 48px #222;
+}
+
+.pulsanti a:hover
+{
+	text-decoration: none;
+	color: #ddd;
+	background: #0A0A0A;
+    /* alpha al 90% */
+	background: rgba(10, 10, 10, 0.9);
+}
+/*importante per mostrare pulsanti sopra il container*/
+
+#container
+{
+	position: absolute;
+	z-index: -1;
+	width: 100%;
+	text-align: center;
+}
+/* FINE PULSANTI!*/
+
+#info
+{
+	font-size: 26px;
+	position: relative;
+	top: 0;
+	width: 100%;
+	text-align: center;
+	padding: 5px;
+	text-shadow: #fff 1px 1px 1px;
+	cursor: default;
+}
+
+#info > img
+{
+	vertical-align: middle;
+}
+
+a
+{
+	color: #0080ff;
+	text-decoration: none;
+}
+
+#header
+{
+	position: relative;
+	font-size: 18px;
+	width: 100%;
+	text-align: center;
+	text-shadow: #fff 1px 1px 1px;
+	cursor: default;
+}
+
+a:hover,
+strong
+{
+	color: #0050ee;
+}
+
+strong
+{
+	text-shadow: #000 1px 1px 1px;
+}
+/* ====================== SLIDER ====================== */
+
+#slider.thumbnails .showcase-thumbnail
+{
+	margin-right: 10px;
+	width: 228px;
+	height: 100px;
+	position: relative;
+}
+
+#slider.thumbnails .showcase-thumbnail img
+{
+	width: 228px;
+	height: auto;
+	opacity: 0.6;
+	filter: alpha(opacity=60);
+	border-radius: 10px;
+}
+
+#slider.thumbnails .showcase-thumbnail img:hover,
+#slider.thumbnails .showcase-thumbnail.active img
+{
+	cursor: pointer;
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+
+#slider.thumbnails .showcase-thumbnail-content
+{
+	padding: 10px;
+	text-align: center;
+	padding-top: 25px;
+}
+
+#slider.thumbnails .showcase-thumbnail-restriction
+{
+	margin-left: 30px;
+}
+
+#slider.thumbnails .showcase-thumbnail-container
+{
+	position: relative;
+	background: #000;
+	background: rgba(0, 0, 0, 0.6);
+	border-radius: 10px 10px 10px 10px;
+	padding: 10px 0;
+	box-shadow: inset 0px 8px 48px #222;
+}
+
+#slider.thumbnails .showcase-thumbnail-button-backward,
+#slider.thumbnails .showcase-thumbnail-button-forward
+{
+	width: 30px;
+	height: 16px;
+	position: absolute;
+	top: 50%;
+	margin-top: -8px;
+}
+
+#slider.thumbnails .showcase-thumbnail-button-backward
+{
+	opacity: 0.6;
+	filter: alpha(opacity=60);
+	z-index: 1;
+}
+
+#slider.thumbnails .showcase-thumbnail-button-forward
+{
+	right: 18px;
+	opacity: 0.6;
+	filter: alpha(opacity=60);
+}
+
+#slider.thumbnails .showcase-thumbnail-button-backward:hover,
+#slider.thumbnails .showcase-thumbnail-button-forward:hover
+{
+	cursor: pointer;
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+
+#slider.thumbnails .showcase-thumbnail-button-backward .showcase-thumbnail-horizontal span,
+#slider.thumbnails .showcase-thumbnail-button-forward .showcase-thumbnail-horizontal span
+{
+	display: block;
+	width: 13px;
+	height: 16px;
+	background: url('../images/slider-arrows.png') no-repeat;
+	text-indent: -9999px;
+}
+
+#slider.thumbnails .showcase-thumbnail-button-backward .showcase-thumbnail-horizontal span
+{
+	background-position: left top;
+}
+
+#slider.thumbnails .showcase-thumbnail-button-forward .showcase-thumbnail-horizontal span
+{
+	background-position: right top;
+	float: right;
+}
+
+.pezzointerno
+{
+	background: rgba(0, 0, 0, 0.7);
+	border-radius: 10px;
+	padding: 10px;
+	width: 96%;
+	margin: 0 auto;
+}
+
+#slider
+{
+	position: absolute;
+	width: 75%;
+	bottom: 25px;
+	right: 25%;
+	left: 58%;
+	margin-left: -37.5%;
+	opacity: 0.2;
+	transition: all 1s ease-in-out;
+	-webkit-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+#slider:hover
+{
+	opacity: 1;
+}
+
+.showcase-thumbnail-container
+{
+	margin: auto;
+}
+
+#hack
+{
+	position: absolute;
+	width: 75%;
+	height: 40px;
+	bottom: 0;
+	right: 25%;
+	left: 58%;
+	margin-left: -37.5%;
+}
+
+.fixMe
+{
+	margin-bottom: 4px;
+}
+
+.tooltip
+{
+	position: absolute;
+	background-color: #000;
+	color: #fff;
+	font-size: 2em;
+	width: 44px;
+	line-height: 44px;
+	text-align: center;
+	font-family: sans serif;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	cursor: default;
+}
+
+#mappa
+{
+	position: absolute;
+	left: 2%;
+	bottom: 25px;
+	z-index: -1;
+	background: rgba(0, 0, 0, 0.7);
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.contornoMappa
+{
+	position: relative;
+	background: #000;
+	background: rgba(0, 0, 0, 0.6);
+	border-radius: 10px 10px 10px 10px;
+	padding: 10px 0;
+	box-shadow: inset 0px 8px 48px #222;
+	width: 190px;
+	height: 100px;
+}
+
+.footer
+{
+	position: absolute;
+	width: 100%;
+	bottom: 0px;
+	left: 1%;
+}
+
+#mappaI
+{
+	display: block;
+	margin: 0 auto;
+	width: 170px;
+	height: 100px;
+}

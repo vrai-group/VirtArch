@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>three.js - Huaca Arco Iris</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link href="css/style.css" media="all" rel="stylesheet" type="text/css">
+		<script src="js/three.js"></script>
+		<script src="js/MTLLoader.js"></script>
+		<script src="js/OBJLoader.js"></script>
+		<script src="js/OrbitControls.js"></script>
+		<script src="js/Detector.js"></script>
+		<script src="js/Tween.js"></script>
+		<script src="js/script.js"></script>
+	</head>
+	<body>
+		<div id="container">
+		</div>
+		<div id="info">
+			Huaca Arco Iris
+			<img alt="icon-adjust" src="loghi/MinisterioCultura.png">
+			<img alt="icon-adjust" src="loghi/ChanChan.png">
+			<img alt="icon-adjust" src="loghi/itabcblu.png">
+			<img class="fixMe" alt="icon-adjust" src="loghi/UNIVPM_logo_nome_trasparente.png">
+		</div>
+		<div id="header">
+			press <strong>h</strong> to toggle hemisphere light, <strong>d</strong> to toggle directional light,
+			<br>
+			<strong>l</strong> to change lighting, <strong>c</strong> to change camera. Hold <strong>left click</strong> to rotate.
+		</div>
+		<div class="cerchio">
+			<span id="percentuale">0%</span>
+			<div class="settoreCircolare">
+				<div class="bar"></div>
+				<div class="maggioreCinquanta"></div>
+			</div>
+		</div>
+		<div class="pulsanti">
+			<div id="left">
+				<a class="pulsante-indietro" style="visibility: hidden;"></a>
+				<a class="pulsante-camera" style="visibility: hidden;"></a>
+			</div>
+			<div id="right">
+				<a class="pulsante-fullscreen"></a>
+			</div>
+			<div id="center">
+			</div>
+		</div>
+		<div class="footer">
+			<!-- START SLIDER -->
+			<div id="hack" style="visibility: hidden;">
+			</div>
+			<div class="thumbnails group inner" id="slider" style="visibility: hidden;">
+				<div class="showcase group">
+					<div class="showcase-thumbnail-container" style=
+						"overflow: hidden;">
+						<div class="pezzointerno">
+							<div class="showcase-thumbnail-button-backward" style=
+								"float: left;">
+								<span class=
+									"showcase-thumbnail-horizontal"><span>Left</span></span>
+							</div>
+							<div class="showcase-thumbnail-restriction" style=
+								"overflow: hidden; margin:auto; width: 940px;">
+								<div class=
+									"showcase-thumbnail-wrapper showcase-thumbnail-wrapper-horizontal"
+									style="position: relative; width: 2618px;">
+									<div class="showcase-thumbnail active" id=
+										"showcase-thumbnail-0" style=
+										"overflow: hidden; float: left;"><img alt="" src=
+										"images/ORTOFOTOSTANDARDIZZATE/ESTERNO/IMMAGINI2D/bottone%20ortofoto%20E1.jpg"></div>
+									<div class="showcase-thumbnail" id=
+										"showcase-thumbnail-1" style=
+										"overflow: hidden; float: left;"><img alt="" src=
+										"images/ORTOFOTOSTANDARDIZZATE/ESTERNO/IMMAGINI2D/bottone%20ortofoto%20E2.jpg"></div>
+									<div class="showcase-thumbnail" id=
+										"showcase-thumbnail-2" style=
+										"overflow: hidden; float: left;"><img alt="" src=
+										"images/ORTOFOTOSTANDARDIZZATE/ESTERNO/IMMAGINI2D/bottone%20ortofoto%20E3.jpg"></div>
+									<div class="showcase-thumbnail" id=
+										"showcase-thumbnail-3" style=
+										"overflow: hidden; float: left;"><img alt="" src=
+										"images/ORTOFOTOSTANDARDIZZATE/ESTERNO/IMMAGINI2D/bottone%20ortofoto%20E4.jpg"></div>
+									<div class="showcase-thumbnail" id=
+										"showcase-thumbnail-4" style=
+										"overflow: hidden; float: left;"><img alt="" src=
+										"images/ORTOFOTOSTANDARDIZZATE/INTERNO/IMMAGINI2D/ortofotoI1.jpg"></div>
+									<div class="showcase-thumbnail" id=
+										"showcase-thumbnail-5" style=
+										"overflow: hidden; float: left;"><img alt="" src=
+										"images/ORTOFOTOSTANDARDIZZATE/INTERNO/IMMAGINI2D/ortofotoI2.jpg"></div>
+									<div class="showcase-thumbnail" id=
+										"showcase-thumbnail-6" style=
+										"overflow: hidden; float: left;"><img alt="" src=
+										"images/ORTOFOTOSTANDARDIZZATE/INTERNO/IMMAGINI2D/ortofotoI3.jpg"></div>
+									<div class="showcase-thumbnail" id=
+										"showcase-thumbnail-7" style=
+										"overflow: hidden; float: left;"><img alt="" src=
+										"images/ORTOFOTOSTANDARDIZZATE/INTERNO/IMMAGINI2D/ortofotoI4.jpg"></div>
+									<div class="showcase-thumbnail" id=
+										"showcase-thumbnail-8" style=
+										"overflow: hidden; float: left;"><img alt="" src=
+										"images/ORTOFOTOSTANDARDIZZATE/INTERNO/IMMAGINI2D/ortofotoI5.jpg"></div>
+									<div class="showcase-thumbnail" id=
+										"showcase-thumbnail-9" style=
+										"overflow: hidden; float: left;"><img alt="" src=
+										"images/ORTOFOTOSTANDARDIZZATE/INTERNO/IMMAGINI2D/ortofotoI6.jpg"></div>
+									<div class="showcase-thumbnail" id=
+										"showcase-thumbnail-10" style=
+										"overflow: hidden; float: left;"><img alt="" src=
+										"images/ORTOFOTOSTANDARDIZZATE/INTERNO/IMMAGINI2D/ortofotoI7.jpg"></div>
+								</div>
+							</div>
+							<div class="showcase-thumbnail-button-forward" style=
+								"float: left;">
+								<span class=
+									"showcase-thumbnail-horizontal"><span>Right</span></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- END SLIDER -->
+			<div id="mappa" style="visibility: hidden;">
+				<div class="contornoMappa">
+					<img id="mappaI" src="" >
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
