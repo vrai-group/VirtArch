@@ -49,7 +49,7 @@ window.onload = function()
 	];
 	
 	var cameraStruttura =
-		{ fov: 30, x: 0, y: 50, z: 80 };
+		{ fov: 30, x: 0, y: 50, z: 80*(1366/window.innerWidth) };
 		
 	var ultimoOggettoCaricato;
 	
@@ -86,8 +86,6 @@ window.onload = function()
 	{
 		var container = document.getElementById('container');
 		camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 1, 5000);
-		//console.log(camera.fov);
-		//camera.position.set(0, 0, 250);
 		camera.position.set(0, 0, 5); //posizione per il bassorilievo
 		scene = new THREE.Scene();
 		scene.fog = new THREE.FogExp2(0xb2e1f2, 0.0004);
@@ -169,7 +167,7 @@ window.onload = function()
 		// OrbitControls
 		controls = new THREE.OrbitControls(camera, renderer.domElement);
 
-		caricaOggetto('obj/Struttura.obj.mtl', 'obj/Struttura.obj', posizionePerRicomparsaStruttura.x, 0, posizionePerRicomparsaStruttura.z, cameraStruttura.fov, cameraStruttura.x, cameraStruttura.y, cameraStruttura.z, 40, 100, -10, 10, -10, 10, false, 0, 1.4);
+		caricaOggetto('obj/Struttura.obj.mtl', 'obj/Struttura.obj', posizionePerRicomparsaStruttura.x, 0, posizionePerRicomparsaStruttura.z, cameraStruttura.fov, cameraStruttura.x, cameraStruttura.y, cameraStruttura.z, 40, 100*(1366/window.innerWidth), -10, 10, -10, 10, false, 0, 1.4);
 
 
 		//gestione click oggetti		
@@ -378,7 +376,7 @@ window.onload = function()
 							cameraStruttura.z = camera.position.z;
 							pulsanteIndietro.addEventListener('click', clickIndietro);
 							controls.reset();
-							caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 12, 2, 12, -5.5, 5.5, -1, 1, false, 0.57, 2.14, -0.8, 0.8);
+							caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 12*(1366/window.innerWidth), 2, 12*(1366/window.innerWidth), -5.5, 5.5, -1, 1, false, 0.57, 2.14, -0.8, 0.8);
 						});
 
 						break;
@@ -398,7 +396,7 @@ window.onload = function()
 							cameraStruttura.z = camera.position.z;
 							pulsanteIndietro.addEventListener('click', clickIndietro);
 							controls.reset();
-							caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 28, 2, 28, -15, 15, -1.6, 1.92, false, 1.3, 1.8, -0.8, 0.8);
+							caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 29*(1366/window.innerWidth), 2, 29*(1366/window.innerWidth), -15, 15, -1.6, 1.92, false, 1.3, 1.8, -0.8, 0.8);
 						});
 						break;
 					case "E4":
@@ -417,7 +415,7 @@ window.onload = function()
 							cameraStruttura.z = camera.position.z;
 							pulsanteIndietro.addEventListener('click', clickIndietro);
 							controls.reset();
-							caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 23, 4, 23, -11, 11, -1, 1, true, Math.PI / 2, Math.PI / 2, 0, 0, 26, 3);
+							caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 24*(1366/window.innerWidth), 4, 24*(1366/window.innerWidth), -11, 11, -1, 1, true, Math.PI / 2, Math.PI / 2, 0, 0, 26, 3);
 						});
 						break;
 					case "I1":
@@ -436,7 +434,7 @@ window.onload = function()
 							cameraStruttura.z = camera.position.z;
 							pulsanteIndietro.addEventListener('click', clickIndietro);
 							controls.reset();
-							caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 6, 2, 6, -2, 2, -0.5, 0.5, false, 0.57, 2.14, -0.8, 0.8);
+							caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 6*(1366/window.innerWidth), 2, 6*(1366/window.innerWidth), -2, 2, -0.5, 0.5, false, 0.57, 2.14, -0.8, 0.8);
 						});
 						break;
 
@@ -456,7 +454,7 @@ window.onload = function()
 							cameraStruttura.z = camera.position.z;
 							pulsanteIndietro.addEventListener('click', clickIndietro);
 							controls.reset();
-							caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0.1, 0, 30, 0, 0, 10, 2, 10, -1.6, 1.92, -1, 1.2, false, 0.57, 2.14, -0.8, 0.8);
+							caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0.1, 0, 30, 0, 0, 10*(1366/window.innerWidth), 2, 10*(1366/window.innerWidth), -1.6, 1.92, -1, 1.2, false, 0.57, 2.14, -0.8, 0.8);
 						});
 						break;
 					case "I4":
@@ -475,7 +473,7 @@ window.onload = function()
 							cameraStruttura.z = camera.position.z;
 							pulsanteIndietro.addEventListener('click', clickIndietro);
 							controls.reset();
-							caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 10, 2, 10, -2.1, 2, -1, 1, false, 0.57, 2.14, -0.8, 0.8);
+							caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 10*(1366/window.innerWidth), 2, 10*(1366/window.innerWidth), -2.1, 2, -1, 1, false, 0.57, 2.14, -0.8, 0.8);
 						});
 						break;
 					case "I5":
@@ -494,7 +492,7 @@ window.onload = function()
 							cameraStruttura.z = camera.position.z;
 							pulsanteIndietro.addEventListener('click', clickIndietro);
 							controls.reset();
-							caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 25, 4, 25, -15, 15, -2, 3, true, Math.PI / 2, Math.PI / 2, 0, 0, 25, 8);
+							caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 25*(1366/window.innerWidth), 4, 25*(1366/window.innerWidth), -15, 15, -2, 3, true, Math.PI / 2, Math.PI / 2, 0, 0, 25, 8);
 						});
 						break;
 					case "I6":
@@ -513,7 +511,7 @@ window.onload = function()
 							cameraStruttura.z = camera.position.z;
 							pulsanteIndietro.addEventListener('click', clickIndietro);
 							controls.reset();
-							caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 22, 4, 22, -5, 5, -1, 1, true, Math.PI / 2, Math.PI / 2, 0, 0, 7.5, 6);
+							caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 22*(1366/window.innerWidth), 4, 22*(1366/window.innerWidth), -5, 5, -1, 1, true, Math.PI / 2, Math.PI / 2, 0, 0, 7.5, 6);
 						});
 						break;
 					case "I7":
@@ -532,7 +530,7 @@ window.onload = function()
 							cameraStruttura.z = camera.position.z;
 							pulsanteIndietro.addEventListener('click', clickIndietro);
 							controls.reset();
-							caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 22, 4, 22, -11, 11, -1, 1, true, Math.PI / 2, Math.PI / 2, 0, 0, 18, 3.5);
+							caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 22*(1366/window.innerWidth), 4, 22*(1366/window.innerWidth), -11, 11, -1, 1, true, Math.PI / 2, Math.PI / 2, 0, 0, 18, 3.5);
 						});
 						break;
 				}
@@ -819,7 +817,7 @@ window.onload = function()
 		{
 			scene.remove(bassorilievo);
 			controls.reset();
-			caricaOggetto('obj/Struttura.obj.mtl', 'obj/Struttura.obj', posizionePerRicomparsaStruttura.x, 0, posizionePerRicomparsaStruttura.z, cameraStruttura.fov, cameraStruttura.x, cameraStruttura.y, cameraStruttura.z, 40, 100, -10, 10, -10, 10, false, 0, 1.4)
+			caricaOggetto('obj/Struttura.obj.mtl', 'obj/Struttura.obj', posizionePerRicomparsaStruttura.x, 0, posizionePerRicomparsaStruttura.z, cameraStruttura.fov, cameraStruttura.x, cameraStruttura.y, cameraStruttura.z, 40, 100*(1366/window.innerWidth), -10, 10, -10, 10, false, 0, 1.4)
 		});
 	}
 
@@ -837,14 +835,36 @@ window.onload = function()
 	function indietroX()
 	{
 		start = posizioniSlide[posizioneAttuale];
-		destinazione = posizioniSlide[posizioneAttuale = (posizioneAttuale + 7) % 8];
+		if(posizioneAttuale==0) {
+			posizioneAttuale=7;
+			destinazione = posizioniSlide[posizioneAttuale];
+			if(window.innerWidth<1025){
+					destinazione=-1904;
+					if(window.innerWidth<870){
+						destinazione=-2142;
+					}
+			}
+		}
+		else
+			destinazione = posizioniSlide[posizioneAttuale = (posizioneAttuale + 7) % 8];
 		anima();
 	}
 
 	function avanti()
 	{
 		start = posizioniSlide[posizioneAttuale];
-		destinazione = posizioniSlide[posizioneAttuale = (posizioneAttuale + 1) % 8];
+		if(posizioneAttuale==6) {
+			posizioneAttuale=posizioneAttuale+1;
+			destinazione = posizioniSlide[posizioneAttuale];
+			if(window.innerWidth<1025){
+					destinazione=-1904;
+					if(window.innerWidth<870){
+						destinazione=-2142;
+					}
+			}
+		}
+		else
+			destinazione = posizioniSlide[posizioneAttuale = (posizioneAttuale + 1) % 8];
 		anima();
 	}
 
@@ -901,7 +921,8 @@ window.onload = function()
 							{
 								scene.remove(oggetto);
 								controls.reset();
-								caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 12, 2, 12, -5.5, 5.5, -1, 1, false, 0.57, 2.14, -0.8, 0.8);
+								console.log("a"+window.innerWidth)
+								caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 12*(1366 / window.innerWidth), 2, 12*(1366 / window.innerWidth), -5.5, 5.5, -1, 1, false, 0.57, 2.14, -0.8, 0.8);
 								Click = false;
 							});
 							break;
@@ -915,7 +936,7 @@ window.onload = function()
 							{
 								scene.remove(oggetto);
 								controls.reset();
-								caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 28, 2, 28, -15, 15, -1.6, 1.92, false, 1.3, 1.8, -0.8, 0.8);
+								caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 29*(1366/window.innerWidth), 2, 29*(1366/window.innerWidth), -15, 15, -1.6, 1.92, false, 1.3, 1.8, -0.8, 0.8);
 								Click = false;
 							});
 							break;
@@ -929,7 +950,7 @@ window.onload = function()
 							{
 								scene.remove(oggetto);
 								controls.reset();
-								caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 27, 6, 27, -12, 12, -1, 0.1, true, Math.PI / 2, Math.PI / 2, 0, 0, 29.66, 3.59);
+								caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 27*(1366/window.innerWidth), 6, 27*(1366/window.innerWidth), -12, 12, -1, 0.1, true, Math.PI / 2, Math.PI / 2, 0, 0, 29.66, 3.59);
 								Click = false;
 							});
 							break;
@@ -943,7 +964,7 @@ window.onload = function()
 							{
 								scene.remove(oggetto);
 								controls.reset();
-								caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 23, 4, 23, -11, 11, -1, 1, true, Math.PI / 2, Math.PI / 2, 0, 0, 26, 3);
+								caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 24*(1366/window.innerWidth), 4, 24*(1366/window.innerWidth), -11, 11, -1, 1, true, Math.PI / 2, Math.PI / 2, 0, 0, 26, 3);
 								Click = false;
 							});
 							break;
@@ -957,7 +978,7 @@ window.onload = function()
 							{
 								scene.remove(oggetto);
 								controls.reset();
-								caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 6, 2, 6, -2, 2, -0.5, 0.5, false, 0.57, 2.14, -0.8, 0.8);
+								caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 6*(1366/window.innerWidth), 2, 6*(1366/window.innerWidth), -2, 2, -0.5, 0.5, false, 0.57, 2.14, -0.8, 0.8);
 								Click = false;
 							});
 							break;
@@ -971,7 +992,7 @@ window.onload = function()
 							{
 								scene.remove(oggetto);
 								controls.reset();
-								caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 21, 4, 21, -10, 10, -1, 1, true, Math.PI / 2, Math.PI / 2, 0, 0, 23, 2.75);
+								caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 21*(1366/window.innerWidth), 4, 21*(1366/window.innerWidth), -10, 10, -1, 1, true, Math.PI / 2, Math.PI / 2, 0, 0, 23, 2.75);
 								Click = false;
 							});
 							break;
@@ -985,7 +1006,7 @@ window.onload = function()
 							{
 								scene.remove(oggetto);
 								controls.reset();
-								caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0.1, 0, 30, 0, 0, 10, 2, 10, -1.6, 1.92, -1, 1.2, false, 0.57, 2.14, -0.8, 0.8);
+								caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0.1, 0, 30, 0, 0, 10*(1366/window.innerWidth), 2, 10*(1366/window.innerWidth), -1.6, 1.92, -1, 1.2, false, 0.57, 2.14, -0.8, 0.8);
 								Click = false;
 							});
 							break;
@@ -999,7 +1020,7 @@ window.onload = function()
 							{
 								scene.remove(oggetto);
 								controls.reset();
-								caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 10, 2, 10, -2.1, 2, -1, 1, false, 0.57, 2.14, -0.8, 0.8);
+								caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 10*(1366/window.innerWidth), 2, 10*(1366/window.innerWidth), -2.1, 2, -1, 1, false, 0.57, 2.14, -0.8, 0.8);
 								Click = false;
 							});
 							break;
@@ -1013,7 +1034,7 @@ window.onload = function()
 							{
 								scene.remove(oggetto);
 								controls.reset();
-								caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 25, 4, 25, -15, 15, -2, 3, true, Math.PI / 2, Math.PI / 2, 0, 0, 25, 8);
+								caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 25*(1366/window.innerWidth), 4, 25*(1366/window.innerWidth), -15, 15, -2, 3, true, Math.PI / 2, Math.PI / 2, 0, 0, 25, 8);
 								Click = false;
 							});
 							break;
@@ -1027,7 +1048,7 @@ window.onload = function()
 							{
 								scene.remove(oggetto);
 								controls.reset();
-								caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 22, 4, 22, -5, 5, -1, 1, true, Math.PI / 2, Math.PI / 2, 0, 0, 7.5, 6);
+								caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 22*(1366/window.innerWidth), 4, 22*(1366/window.innerWidth), -5, 5, -1, 1, true, Math.PI / 2, Math.PI / 2, 0, 0, 7.5, 6);
 								Click = false;
 							});
 							break;
@@ -1041,7 +1062,7 @@ window.onload = function()
 							{
 								scene.remove(oggetto);
 								controls.reset();
-								caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 22, 4, 22, -11, 11, -1, 1, true, Math.PI / 2, Math.PI / 2, 0, 0, 18, 3.5);
+								caricaOggetto('obj/' + modello.mtl, 'obj/' + modello.obj, -40, 0, 0, 30, 0, 0, 22*(1366/window.innerWidth), 4, 22*(1366/window.innerWidth), -11, 11, -1, 1, true, Math.PI / 2, Math.PI / 2, 0, 0, 18, 3.5);
 								Click = false;
 							});
 							break;
