@@ -403,12 +403,12 @@ strong
 
 #slider
 {
-	position: absolute;
+	position: relative;
 	width: 75%;
 	bottom: 25px;
-	right: 25%;
-	left: 58%;
-	margin-left: -37.5%;
+	/*! right: 25%; */
+	/*! left: 58%; */
+	/*! margin-left: -37.5%; */
 	opacity: 0.2;
 	transition: all 1s ease-in-out;
 	-webkit-transition: all 1s ease-in-out;
@@ -417,6 +417,7 @@ strong
 	-moz-user-select: none;
 	-webkit-user-select: none;
 	user-select: none;
+	display: inline-block;
 }
 
 #slider:hover
@@ -431,13 +432,16 @@ strong
 
 #hack
 {
-	position: absolute;
-	width: 75%;
-	height: 40px;
-	bottom: 0;
-	right: 25%;
-	left: 58%;
-	margin-left: -37.5%;
+	 position: relative;
+	 width: 75%;
+	/*! height: 40px; */
+	height: 140px;
+	/*! bottom: 0; */
+	/*! right: 25%; */
+	/*! left: 58%; */
+	/*! margin-left: -37.5%; */
+	display: inline-block;
+	padding: 10px 0;
 }
 
 .fixMe
@@ -463,13 +467,14 @@ strong
 
 #mappa
 {
-	position: absolute;
-	left: 2%;
+	position: relative;
+	/*! left: 2%; */
 	bottom: 25px;
-	z-index: -1;
+	/*! z-index: -1; */
 	background: rgba(0, 0, 0, 0.7);
 	border-radius: 10px;
 	padding: 10px;
+	display: inline-block;
 }
 
 .contornoMappa
@@ -489,7 +494,27 @@ strong
 	position: absolute;
 	width: 100%;
 	bottom: 0px;
-	left: 1%;
+	/*!left: 1%; */
+	text-align: center;
+}
+
+.footerhack
+{
+	position: absolute;
+	width: 100%;
+	bottom: -80px;
+	/*!left: 1%; */
+	text-align: center;
+}
+
+.prehack
+{
+	position: relative;
+	border-radius: 10px;
+	padding: 10px;
+	display: inline-block;
+	width: 190px;
+	height: 100px;
 }
 
 #mappaI
@@ -498,4 +523,21 @@ strong
 	margin: 0 auto;
 	width: 170px;
 	height: 100px;
+}
+
+@media (max-width:860px)
+{
+
+#mappa
+{
+	//visibility: hidden;
+	position: absolute;
+	bottom: -1000px;
+}
+.prehack
+{
+	position: absolute;
+	bottom: -1000px;
+}
+
 }
